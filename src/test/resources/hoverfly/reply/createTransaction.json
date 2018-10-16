@@ -1,0 +1,62 @@
+{
+  "data" : {
+    "pairs" : [ {
+      "request" : {
+        "path" : [ {
+          "matcher" : "exact",
+          "value" : "/merchants/c95xy5xmkzv83sxv/transactions"
+        } ],
+        "method" : [ {
+          "matcher" : "exact",
+          "value" : "POST"
+        } ],
+        "destination" : [ {
+          "matcher" : "regex",
+          "value" : "api.(sandbox.)?braintreegateway.com"
+        } ],
+        "scheme" : [ {
+          "matcher" : "exact",
+          "value" : "https"
+        } ],
+        "body" : [ {
+          "matcher" : "glob",
+          "value" : "<transaction><amount>1000.01</amount><orderId>*</orderId><paymentMethodNonce>*</paymentMethodNonce><type>sale</type></transaction>"
+        } ]
+      },
+      "response" : {
+        "status" : 201,
+        "body" : "H4sIAJGlxFsAA+RY32/jNgx+v7+iyLvqOE3a9OD6MGA/bsNWDLfrgLuXA20xsa625ElymtxfP8p2HLuW0+5lGLC3mPxESSRFfkz0bl/kFzvURih5Nwsv57MLlKniQm7vZg8ff2Tr2bv4TWQ1SAOpJVT85uIiEjy+Lg7bXWKvo4A+nMxYsJWJobKZ0uIb8ihoRU5rDyXGBnKMgvqnk6WV1rTbgQmjGG2K8Q8PH6JgLHZgKFQlbRzO5/PLeRgF7bdTFajTDKRlkKZOyOhEFo2NAp+mPmuVMI/uQor8bmZ1hbOgsQzGon4VVGlOSLJ/tV5BeJukLNzcAlsuYcXWS75gCV5fh4vFDdwAOa2D147QCBY5A3vhnHM34/RpRYGzeDEP1yycs3D1MVy+vVq+Xd18Jhd1C+r1Vcn/2frTgjYQxiq6pPuoo/v8diTcCG0sk1CgR5nDtC5VRQny4NFgASL3yJ8wMcL6bJWZkj75BvajgAT9W0WJyHNK6n/5hsZqREobzjUa43PB3qLkLhKTkFylkAvrM69xSy/S5ydFTy9vHs/tMpzfREFfdDw2pbI+TN+qUbsVDPIyg8WrUFcvoWRFQRHpOGC9GNHVNpXkvofWaUyb7KA1HAZK8mevYvmMlKCtIHcYtDbHAulND1f4jJ9K20vme2YTsGnmxWSiLP+XKXkmQf4zudiPTlsf2UZgzk2bCzvDUGulGfmoVNKg92o1rnf1ITr+jfrYWcDRxDBqz0A/N1bOYupr7Hbj/cdCB91Se3iCA2m+YpPl1HHMOLBRqVVKu5Efjq8Danht6f2Hxa8//U615xxoaGV4FNft+8vHB/XoLGVw/F1Jmp0jIVOI2rWcC3cScv4YNrrrTonUBWhDgacVlDsJ6rFHKkcWaJemxU+gLOxZQ2G8KtxjUR67eaJUjiBn8QZy4whUBziyB7oFS0HzNsWtekTfG0yEjJfzcLFeu2Ir+3VkGYfrNdGq9qN9KmSS1XTtT2GAcqX7PpaKUugmlIWSNovDRRSMhCPsAUE7YnI7ANfSdt+2czNXaGrS+fDHqZ+fpKdTZiqvne0vH6KALbJK53FmbWneBgEYKtHmMtEgpHs2bb5fUt0MSji4yv2lQMpV/iVXWxXs6P6Xpdy+Q7kTWkkHuDMgeaL2xIA7+22t01gCcbt75dKv+d1oMoTcZnRijB/ko1RPMgp6sgbEMRH2pG8+W1WlKXCUg9sqdwyuh3qu6RqBY6/U607Qnqw9Lxy0ynuIo6B1nzEVlUJqZfLxhBlIh6VVbZjTgkyxv+tYeXSX4lVak/PTCU6yBrTNVUKPztsmKyn+qrB9agSh4Agq1qNX594wykIxwx8n3lanbznk8G21Qw7LBKWiPgw4QtdfawSSoTZo7kESFydFUb6Sn3f4zsLZ6apGTA9IjY8MMWFOAw2xf3Ok+u5oPSZjFNUujKEUdISxvLlg8PyGnaT1SlMFc/AzoyoxqRblJHPq6buqVdNCVlKnVpwROWHOf976NkDSsbT1YunIz/ZxrYBR1ffQPi5MnbteHTZW1LF0TVSgqcGFasb4bEOjRKncREz3mkjZTt90AxpUJY6tUsx3rn1tEKcaj9tWPbEmmiMtuSGptGlYLUdLs5s5VqWByh+bHiX2bz/EjP4EeCUc984BVI21/xhuPKBMJSLnM1ilqYfxUkQm7u5uXlYWz00LTXcD/pXal1vvw7YthwlJJK5qxhHXZpvy88WVnyiYAg1pUM8pQ7bUZ0KToJdt1dzpJVsdwbIZNVdGT9HlKNLRN8o7CBm20cSwzwwJ3bw0lb3HZzqll2iflH58NrrFc1eBw3m4CpdXyxUNyhO43ujZtaJXT6CTzeulQfTsVhPz6PRmnSbm73/JEnmffbr6UCaL1ea+CFefrz4L/v2nKDjBphi2Szs4y7DrxBx0kfjN3wAAAP//AwAMRBEibhQAAA==",
+        "encodedBody" : true,
+        "templated" : false,
+        "headers" : {
+          "Cache-Control" : [ "max-age=0, private, must-revalidate" ],
+          "Content-Encoding" : [ "gzip" ],
+          "Content-Security-Policy" : [ "frame-ancestors 'self'" ],
+          "Content-Type" : [ "application/xml; charset=utf-8" ],
+          "Date" : [ "Mon, 15 Oct 2018 14:34:57 GMT" ],
+          "Etag" : [ "W/\"819ab0cde066049878427bc65a9e1e24\"" ],
+          "Hoverfly" : [ "Was-Here" ],
+          "Strict-Transport-Security" : [ "max-age=31536000; includeSubDomains" ],
+          "Transfer-Encoding" : [ "chunked" ],
+          "Vary" : [ "Accept-Encoding" ],
+          "X-Authentication" : [ "basic_auth" ],
+          "X-Broxyid" : [ "02-1539614096.188-80.169.76.250-43147310" ],
+          "X-Content-Type-Options" : [ "nosniff" ],
+          "X-Frame-Options" : [ "SAMEORIGIN" ],
+          "X-Request-Id" : [ "02-1539614096.188-80.169.76.250-43147310" ],
+          "X-Runtime" : [ "0.657715" ],
+          "X-User" : [ "yns4vdxbggv9rjg7" ],
+          "X-Xss-Protection" : [ "1; mode=block" ]
+        }
+      }
+    } ],
+    "globalActions" : {
+      "delays" : [ ]
+    }
+  },
+  "meta" : {
+    "schemaVersion" : "v5",
+    "hoverflyVersion" : "v0.17.1",
+    "timeExported" : "2018-10-15T16:34:57+02:00"
+  }
+}

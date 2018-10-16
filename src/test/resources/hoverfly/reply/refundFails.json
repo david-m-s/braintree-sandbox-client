@@ -1,0 +1,110 @@
+{
+  "data" : {
+    "pairs" : [ {
+      "request" : {
+        "path" : [ {
+          "matcher" : "exact",
+          "value" : "/merchants/c95xy5xmkzv83sxv/transactions"
+        } ],
+        "method" : [ {
+          "matcher" : "exact",
+          "value" : "POST"
+        } ],
+        "destination" : [ {
+          "matcher" : "regex",
+          "value" : "api.(sandbox.)?braintreegateway.com"
+        } ],
+        "scheme" : [ {
+          "matcher" : "exact",
+          "value" : "https"
+        } ],
+        "body" : [ {
+          "matcher" : "glob",
+          "value" : "<transaction><amount>1000.06</amount><orderId>*</orderId><paymentMethodNonce>*</paymentMethodNonce><type>sale</type></transaction>"
+        } ]
+      },
+      "response" : {
+        "status" : 201,
+        "body" : "H4sIAICdxFsAA+RYUW/jNgx+v19R5F21naa99OC6uIfttgLrgLvrsO2lkC061tWWNElOk/v1o2zHsWs57V6GAXuLyU+URFLkx8S3u6o824I2XIqbRXQeLs5AZJJxsblZPHz9kawXt8m72GoqDM0sopJ3Z2cxZ8lVptYp7FUc4IeTGUttbRJa20Jq/h1YHHQip7V7BYmhJcRB89PJslpr3G1PuJEEN4Xkh4fPcTAVOzCtZC1sEoVheB5exUH37VQV6KygwhKaZU5I8EQWjI0Dn6Y5a50Sj+5M8PJmYXUNi6C1TI0F/Sao1AyRaP8iivKr1Toil9l1Slb0AkiaX1KSR8swXL5/v7q+zuOghzeO0EAtMELtmXPOzYLhp+UVLJJlGK1JFJLo8mu0+hCGHy6Wf6KL+gXN+lqxf7b+uKALhLESL+k+mui+vB0Kc66NJYJW4FGWdF6XyUpRsfdooKK89MifITXc+mypQgqfPKe7SUCC4a3ilJclJvW/fENjNQCmDWMajPG5YGdBMBeJWUgpM1py6zOvYYMv0ucniU+vbB/P9SoK38fBUHQ4Nqay3s/fqlW7FYSWqqDLN6EuXkOJGoPCs2nABjHCq+W1YL6H1mtMl+xUa7ofKdGfg4rlM6KothzdYcDaEirANz1e4TN+LG2vmR+YTanNCi+m4Er9L1PyRIL8Z3JxGJ2uPpKcQ8lMlwtbQ0BrqQn6SElhwHu1Bje4+hid/IJ97CTgYGIctRegn1srJzHNNbbb6f5ToYNusD080z1qvkGb5dhxzDSwsdIyw93QD4fXQRt4Y2n5Jfp69wlrzynQ2Mr4KK7bD5dPD+rRWczg5KNCzdaRkDlE41rGuDsJOn8Km9x1K3nmApRj4HEF5k4KeuqR2pEF3KVt8TMoS3ekpTBeFeygUodunkpZAhWLJKelcQSqBxzYA96CZFSzLsWtfALfG0y5SFZhtFyvXbEVwzqySqL1OoqD7qN7KmiSNHTtN24o5kr/fSgVius2lJUUtkiiZRxMhBPsHqh2xOR6BG6k3b5d5yau0DSk8+HLsZ8fpcdTFrJsnO0vH7yiGyC1LpPCWmU+BAE1WKLNeaopF+7ZdPl+jnUzUHTvKvdjBZir7LGUGxls8f7nSmxuQWy5lsIBbgwVLJU7ZMC9/a7WaVAUud29dOnX/m41BdDSFnhiSB7Ek5DPIg4GshbEIOX2qG8/O1WtMXCYg5u6dAxugHqp6RuBY6/Y647Qgaw7L91rWQ4QB0HnPmNqLIXYysTTETOSjkurzInTUpHBcNep8uAuyeqsIefHExxlLWhTyhQfnbdN1oL/VUP31BCCweFYrCevzr1hEJUkhj3NvK1e33HI8dvqhhxScExFvR9xhL6/NghAQ13Q3INELo6KSr2Rn/f43sLJ6apBzA9IrY8MMmGGAw2yf3Og+u5oAyZjJNYuSKjieISpvL1g8PKGvaTzSlsFS+pnRnVqMs3VLHMa6Puq1dBCorBTS0aQnBDnP299GyHxWNp6sXjkF/u4VkCw6ntoH+OmyV2vDlor8lC6ZirQ3OCCNWN6trFRpFRuIsZ7zaRsr2+7AQ6qAqZWMeZb175ygLnG47aVz6SN5kSLbkhrbVpWy8Di7GYOVWmk8sdmQIn9248xkz8B3giHnXMAVmPtP4YbDzBTkcj5DNZZ5mG8GJGZu7ubq9rCqWmh7W6UfcP25db7sF3LIVwgiavbccS12bb8PLryEwdzoDENGjhlzJaGTGgW9Lqthju9ZqsnWLbA5krwKbocBTx6Lr2DkCG5RoZ9Ykjo56W57D080zm9APss9dOL0S0JXQWOwugyWoXhBfKXGdxg9Oxb0Zsn0Nnm9dogenKrmXl0frNek7Cf7opU3Bd/XHxW6fIyv6/un3/9dFfC7x/j4AibY9gu7ehJht0k5qiLJO/+BgAA//8DALMs9JFuFAAA",
+        "encodedBody" : true,
+        "templated" : false,
+        "headers" : {
+          "Cache-Control" : [ "max-age=0, private, must-revalidate" ],
+          "Content-Encoding" : [ "gzip" ],
+          "Content-Security-Policy" : [ "frame-ancestors 'self'" ],
+          "Content-Type" : [ "application/xml; charset=utf-8" ],
+          "Date" : [ "Mon, 15 Oct 2018 14:00:32 GMT" ],
+          "Etag" : [ "W/\"c5fde451d117b3bf7c92483c59d10e18\"" ],
+          "Hoverfly" : [ "Was-Here" ],
+          "Strict-Transport-Security" : [ "max-age=31536000; includeSubDomains" ],
+          "Transfer-Encoding" : [ "chunked" ],
+          "Vary" : [ "Accept-Encoding" ],
+          "X-Authentication" : [ "basic_auth" ],
+          "X-Broxyid" : [ "02-1539612031.849-80.169.76.250-42865372" ],
+          "X-Content-Type-Options" : [ "nosniff" ],
+          "X-Frame-Options" : [ "SAMEORIGIN" ],
+          "X-Request-Id" : [ "02-1539612031.849-80.169.76.250-42865372" ],
+          "X-Runtime" : [ "0.432371" ],
+          "X-User" : [ "yns4vdxbggv9rjg7" ],
+          "X-Xss-Protection" : [ "1; mode=block" ]
+        }
+      }
+    }, {
+      "request" : {
+        "path" : [ {
+          "matcher" : "glob",
+          "value" : "/merchants/c95xy5xmkzv83sxv/transactions/*/refund"
+        } ],
+        "method" : [ {
+          "matcher" : "exact",
+          "value" : "POST"
+        } ],
+        "destination" : [ {
+          "matcher" : "regex",
+          "value" : "api.(sandbox.)?braintreegateway.com"
+        } ],
+        "scheme" : [ {
+          "matcher" : "exact",
+          "value" : "https"
+        } ],
+        "body" : [ {
+          "matcher" : "xml",
+          "value" : ""
+        } ]
+      },
+      "response" : {
+        "status" : 422,
+        "body" : "H4sIAIGdxFsAA6xSSW7DMAy85xWC7o4SFA4cQFYOBfqC9gGyzaZCrQWkbNh9fZ14TZFjb+TMUDMkJC+drVkLSMa7nB/3B87Alb4y7przj/e3JOMXtZM6mAQQPSYIFLwjUDvG5B2iW7k0LPYBcq4Rdc/FREXUjnQZB5MReS6fuZld+wEZQoE6H9PDSYp7vSV1jGiKJsL0HvW28DVXhSaQYmEfZiwQ6SuoV+2cjwzhs3EV20RljasHDTORGWIEMdZQ7aWYB9e04iHu1M53EX+239IyaNR2VlrA8ku7mJhKlee069POfv+02Qt17c12ZUf9UJzKkBXQBykWdGMnRr/V5B+WHs755DP8AgAA//8DAPC1zxVJAgAA",
+        "encodedBody" : true,
+        "templated" : false,
+        "headers" : {
+          "Cache-Control" : [ "no-cache" ],
+          "Content-Encoding" : [ "gzip" ],
+          "Content-Security-Policy" : [ "frame-ancestors 'self'" ],
+          "Content-Type" : [ "application/xml; charset=utf-8" ],
+          "Date" : [ "Mon, 15 Oct 2018 14:00:33 GMT" ],
+          "Hoverfly" : [ "Was-Here" ],
+          "Strict-Transport-Security" : [ "max-age=31536000; includeSubDomains" ],
+          "Transfer-Encoding" : [ "chunked" ],
+          "Vary" : [ "Accept-Encoding" ],
+          "X-Authentication" : [ "basic_auth" ],
+          "X-Broxyid" : [ "02-1539612032.783-80.169.76.250-42865450" ],
+          "X-Content-Type-Options" : [ "nosniff" ],
+          "X-Frame-Options" : [ "SAMEORIGIN" ],
+          "X-Request-Id" : [ "02-1539612032.783-80.169.76.250-42865450" ],
+          "X-Runtime" : [ "0.145922" ],
+          "X-User" : [ "yns4vdxbggv9rjg7" ],
+          "X-Xss-Protection" : [ "1; mode=block" ]
+        }
+      }
+    } ],
+    "globalActions" : {
+      "delays" : [ ]
+    }
+  },
+  "meta" : {
+    "schemaVersion" : "v5",
+    "hoverflyVersion" : "v0.17.1",
+    "timeExported" : "2018-10-15T16:00:33+02:00"
+  }
+}
