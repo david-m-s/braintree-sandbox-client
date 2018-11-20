@@ -7,15 +7,13 @@ import com.braintreegateway.Transaction.Status;
 import com.braintreegateway.TransactionRequest;
 import org.junit.Assert;
 import java.math.BigDecimal;
-import java.util.UUID;
 
 public class CreateTransactionRefund implements Scenario {
 
   @Override
   public void scenario(BraintreeGateway gateway) {
-    String orderId = UUID.randomUUID().toString();
-    TransactionRequest request = new TransactionRequest().amount(new BigDecimal("1000.05"))
-        .paymentMethodNonce("fake-valid-nonce").orderId(orderId);
+    TransactionRequest request = new TransactionRequest().amount(getAmount())
+        .paymentMethodNonce(getNonce()).orderId(getOrderId());
     Result<Transaction> result = gateway.transaction().sale(request);
     Assert.assertTrue(result.isSuccess());
     Assert.assertEquals(Status.AUTHORIZED, result.getTarget().getStatus());
@@ -30,6 +28,11 @@ public class CreateTransactionRefund implements Scenario {
     result = gateway.transaction().refund(result.getTarget().getId());
     Assert.assertTrue(result.isSuccess());
     Assert.assertEquals(Status.SUBMITTED_FOR_SETTLEMENT, result.getTarget().getStatus());
+  }
+
+  @Override
+  public BigDecimal getAmount() {
+    return new BigDecimal("1000.05");
   }
 
 }
