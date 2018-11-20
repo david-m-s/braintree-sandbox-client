@@ -23,6 +23,12 @@
             <artifactId>braintree-java</artifactId>
             <version>2.83.1</version>
         </dependency>
+        
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>1.7.25</version>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
