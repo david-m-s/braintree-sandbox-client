@@ -2,14 +2,13 @@ package com.magento.scenario.play;
 
 import com.braintreegateway.Environment;
 import com.magento.scenario.Scenario;
-import static java.beans.Introspector.decapitalize;
 import io.specto.hoverfly.junit.rule.HoverflyRule;
 
 public class BraintreeScenarioRecorder extends AbstractBraintreeScenario {
 
   public BraintreeScenarioRecorder(Scenario scenario) {
     this.scenario = scenario;
-    hoverfly = HoverflyRule.inCaptureMode(decapitalize(scenario.getName()) + ".json");
+    hoverfly = HoverflyRule.inCaptureMode(scenario.getName() + ".json");
   }
 
   @Override

@@ -9,7 +9,6 @@ import io.specto.hoverfly.junit.rule.HoverflyRule;
 
 public class BraintreeScenarioReplayer extends AbstractBraintreeScenario {
 
-
   public BraintreeScenarioReplayer(Scenario scenario) {
     this.scenario = scenario;
     hoverfly = HoverflyRule.inSimulationMode(SimulationSource
