@@ -5,7 +5,7 @@ import com.braintreegateway.Result;
 import com.braintreegateway.Transaction;
 import com.braintreegateway.Transaction.Status;
 import com.braintreegateway.TransactionRequest;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import java.math.BigDecimal;
 
 public class CreateTransaction implements Scenario {
@@ -15,12 +15,17 @@ public class CreateTransaction implements Scenario {
     TransactionRequest request = new TransactionRequest().amount(getAmount())
         .paymentMethodNonce(getNonce()).orderId(getOrderId());
     Result<Transaction> result = gateway.transaction().sale(request);
-    Assert.assertTrue(result.isSuccess());
-    Assert.assertEquals(Status.AUTHORIZED, result.getTarget().getStatus());
+    Assertions.assertTrue(result.isSuccess());
+    Assertions.assertEquals(Status.AUTHORIZED, result.getTarget().getStatus());
   }
 
   @Override
   public BigDecimal getAmount() {
     return new BigDecimal("1000.01");
+  }
+
+  @Override
+  public String toString() {
+    return getName();
   }
 }

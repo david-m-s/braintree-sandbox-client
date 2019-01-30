@@ -1,15 +1,11 @@
 package com.magento.scenario.play;
 
 import com.braintreegateway.Environment;
-import com.magento.scenario.Scenario;
-import io.specto.hoverfly.junit.rule.HoverflyRule;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import io.specto.hoverfly.junit.core.HoverflyMode;
 
 public class BraintreeScenarioRecorder extends AbstractBraintreeScenario {
-
-  public BraintreeScenarioRecorder(Scenario scenario) {
-    this.scenario = scenario;
-    hoverfly = HoverflyRule.inCaptureMode(scenario.getName() + ".json");
-  }
 
   @Override
   protected Environment getEnvironment() {
@@ -21,6 +17,16 @@ public class BraintreeScenarioRecorder extends AbstractBraintreeScenario {
   protected BraintreeCredentials getBraintreeCredentials() {
     return new BraintreeCredentials("c95xy5xmkzv83sxv", "gd2cncr42hg7jq8t",
         "230a1fad2dea71bb0f5a4644c3cc6b81");
+  }
+
+  @Override
+  protected HoverflyMode getHoverflyMode() {
+    return HoverflyMode.CAPTURE;
+  }
+
+  @Override
+  protected Path getHoverflyPath() {
+    return Paths.get("target/hoverfly/capture/");
   }
 
 }

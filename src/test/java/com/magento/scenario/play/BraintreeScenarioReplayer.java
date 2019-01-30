@@ -1,19 +1,13 @@
 package com.magento.scenario.play;
 
 import com.braintreegateway.Environment;
-import com.magento.scenario.Scenario;
-import org.junit.After;
+import org.junit.jupiter.api.AfterEach;
+import java.nio.file.Path;
 import java.nio.file.Paths;
-import io.specto.hoverfly.junit.core.SimulationSource;
-import io.specto.hoverfly.junit.rule.HoverflyRule;
+import io.specto.hoverfly.junit.core.Hoverfly;
+import io.specto.hoverfly.junit.core.HoverflyMode;
 
 public class BraintreeScenarioReplayer extends AbstractBraintreeScenario {
-
-  public BraintreeScenarioReplayer(Scenario scenario) {
-    this.scenario = scenario;
-    hoverfly = HoverflyRule.inSimulationMode(SimulationSource
-        .file(Paths.get("src/test/resources/hoverfly/reply/" + scenario.getName() + ".json")));
-  }
 
   @Override
   protected Environment getEnvironment() {
@@ -26,8 +20,18 @@ public class BraintreeScenarioReplayer extends AbstractBraintreeScenario {
     return new BraintreeCredentials("c95xy5xmkzv83sxv", "public key", "private key");
   }
 
-  @After
-  public void assertHoverfly() {
-    hoverfly.assertThatNoDiffIsReported();
+  @AfterEach
+  public void assertHoverfly(Hoverfly hoverfly) {
+    hoverfly.assertThatNoDiffIsReported(true);
+  }
+
+  @Override
+  protected HoverflyMode getHoverflyMode() {
+    return HoverflyMode.SIMULATE;
+  }
+
+  @Override
+  protected Path getHoverflyPath() {
+    return Paths.get("src/test/resources/hoverfly/reply/");
   }
 }

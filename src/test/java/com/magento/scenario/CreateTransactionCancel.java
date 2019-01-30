@@ -5,7 +5,7 @@ import com.braintreegateway.Result;
 import com.braintreegateway.Transaction;
 import com.braintreegateway.Transaction.Status;
 import com.braintreegateway.TransactionRequest;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import java.math.BigDecimal;
 
 public class CreateTransactionCancel implements Scenario {
@@ -15,15 +15,20 @@ public class CreateTransactionCancel implements Scenario {
     TransactionRequest request = new TransactionRequest().amount(getAmount())
         .paymentMethodNonce(getNonce()).orderId(getOrderId());
     Result<Transaction> result = gateway.transaction().sale(request);
-    Assert.assertTrue(result.isSuccess());
-    Assert.assertEquals(Status.AUTHORIZED, result.getTarget().getStatus());
+    Assertions.assertTrue(result.isSuccess());
+    Assertions.assertEquals(Status.AUTHORIZED, result.getTarget().getStatus());
     result = gateway.transaction().voidTransaction(result.getTarget().getId());
-    Assert.assertTrue(result.isSuccess());
-    Assert.assertEquals(Status.VOIDED, result.getTarget().getStatus());
+    Assertions.assertTrue(result.isSuccess());
+    Assertions.assertEquals(Status.VOIDED, result.getTarget().getStatus());
   }
 
   @Override
   public BigDecimal getAmount() {
     return new BigDecimal("1000.03");
+  }
+
+  @Override
+  public String toString() {
+    return getName();
   }
 }
